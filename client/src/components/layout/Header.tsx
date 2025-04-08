@@ -98,8 +98,10 @@ const Header = () => {
               size="icon"
               onClick={toggleMobileMenu}
               aria-label="Toggle menu"
+              className="relative"
             >
-              {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+              <Menu className={`h-6 w-6 absolute transition-all duration-300 ${mobileMenuOpen ? 'opacity-0 rotate-90' : 'opacity-100 rotate-0'}`} />
+              <X className={`h-6 w-6 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 rotate-0' : 'opacity-0 -rotate-90'}`} />
             </Button>
           </div>
 
@@ -159,68 +161,72 @@ const Header = () => {
         </div>
 
         {/* Mobile Menu */}
-        {mobileMenuOpen && (
-          <div className="md:hidden mt-3 border-t pt-3">
-            <nav className="flex flex-col space-y-3">
-              {navItems.map((item) => (
-                item.isPage ? (
-                  <Link
-                    key={item.name}
-                    href={item.path || "/"}
-                    className="font-semibold text-[#003366] hover:text-[#800000] transition-all block"
-                    onClick={closeMobileMenu}
-                  >
-                    {item.name}
-                  </Link>
-                ) : (
-                  <button
-                    key={item.name}
-                    className="font-semibold text-[#003366] hover:text-[#800000] transition-all text-left"
-                    onClick={() => {
-                      if (item.sectionId) {
-                        scrollToSection(item.sectionId);
-                      } else if (item.path) {
-                        window.location.href = item.path;
-                      }
-                      
-                      if (item.hasDropdown) {
-                        // Don't close menu if dropdown clicked
-                      } else {
-                        closeMobileMenu();
-                      }
-                    }}
-                  >
-                    {item.name}
-                  </button>
-                )
+        <div 
+          className={`md:hidden overflow-hidden transition-all duration-300 ease-in-out ${
+            mobileMenuOpen 
+              ? 'max-h-[500px] opacity-100 mt-3 border-t pt-3' 
+              : 'max-h-0 opacity-0 border-t-0'
+          }`}
+        >
+          <nav className="flex flex-col space-y-3">
+            {navItems.map((item) => (
+              item.isPage ? (
+                <Link
+                  key={item.name}
+                  href={item.path || "/"}
+                  className="font-semibold text-[#003366] hover:text-[#800000] transition-all block"
+                  onClick={closeMobileMenu}
+                >
+                  {item.name}
+                </Link>
+              ) : (
+                <button
+                  key={item.name}
+                  className="font-semibold text-[#003366] hover:text-[#800000] transition-all text-left"
+                  onClick={() => {
+                    if (item.sectionId) {
+                      scrollToSection(item.sectionId);
+                    } else if (item.path) {
+                      window.location.href = item.path;
+                    }
+                    
+                    if (item.hasDropdown) {
+                      // Don't close menu if dropdown clicked
+                    } else {
+                      closeMobileMenu();
+                    }
+                  }}
+                >
+                  {item.name}
+                </button>
+              )
+            ))}
+            
+            {/* Mobile Programs submenu */}
+            <div className="pl-4 space-y-2">
+              {programDropdownItems.map((program) => (
+                <Link 
+                  key={program.name} 
+                  href={`/programs/${program.path}`}
+                  className="block text-sm text-[#003366] hover:text-[#800000]"
+                  onClick={closeMobileMenu}
+                >
+                  {program.name}
+                </Link>
               ))}
-              
-              {/* Mobile Programs submenu */}
-              <div className="pl-4 space-y-2">
-                {programDropdownItems.map((program) => (
-                  <Link 
-                    key={program.name} 
-                    href={`/programs/${program.path}`}
-                    className="block text-sm text-[#003366] hover:text-[#800000]"
-                    onClick={closeMobileMenu}
-                  >
-                    {program.name}
-                  </Link>
-                ))}
-              </div>
-              
-              <Button 
-                className="bg-[#800000] text-white hover:bg-opacity-90 w-full"
-                onClick={() => {
-                  scrollToSection("admissions");
-                  closeMobileMenu();
-                }}
-              >
-                Apply Now
-              </Button>
-            </nav>
-          </div>
-        )}
+            </div>
+            
+            <Button 
+              className="bg-[#800000] text-white hover:bg-opacity-90 w-full"
+              onClick={() => {
+                scrollToSection("admissions");
+                closeMobileMenu();
+              }}
+            >
+              Apply Now
+            </Button>
+          </nav>
+        </div>
       </div>
     </header>
   );

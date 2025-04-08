@@ -64,9 +64,9 @@ const Hero = () => {
           </div>
           <div className="md:w-1/2 relative">
             {/* Slideshow */}
-            <div className="overflow-hidden rounded-lg shadow-xl">
+            <div className="overflow-hidden rounded-lg shadow-xl" style={{ aspectRatio: "16/9" }}>
               <div 
-                className="flex transition-transform duration-1000 ease-in-out"
+                className="flex transition-transform duration-1000 ease-in-out h-full"
                 style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
               >
                 {slideshowImages.map((image, index) => (
@@ -74,7 +74,7 @@ const Hero = () => {
                     key={index}
                     src={image} 
                     alt={`College Campus Slideshow ${index + 1}`} 
-                    className="min-w-full h-auto object-cover"
+                    className="min-w-full h-full object-cover"
                   />
                 ))}
               </div>
