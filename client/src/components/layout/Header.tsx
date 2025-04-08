@@ -118,6 +118,15 @@ const Header = () => {
                   </button>
                   <div className="absolute hidden group-hover:block bg-white mt-2 py-2 w-52 shadow-lg rounded-md z-10">
                     <div className="grid grid-cols-1 gap-1">
+                      <Link 
+                        key="all-programs" 
+                        href="/programs"
+                        className="px-4 py-2 text-sm hover:bg-gray-100 transition-all font-semibold text-[#800000]"
+                        onClick={closeMobileMenu}
+                      >
+                        View All Programs
+                      </Link>
+                      <div className="border-t my-1"></div>
                       {programDropdownItems.map((program) => (
                         <Link 
                           key={program.name} 
@@ -204,6 +213,15 @@ const Header = () => {
             
             {/* Mobile Programs submenu */}
             <div className="pl-4 space-y-2">
+              <Link 
+                key="all-programs-mobile" 
+                href="/programs"
+                className="block text-sm font-semibold text-[#800000] hover:text-[#003366]"
+                onClick={closeMobileMenu}
+              >
+                View All Programs
+              </Link>
+              <div className="border-t w-1/2 my-2"></div>
               {programDropdownItems.map((program) => (
                 <Link 
                   key={program.name} 

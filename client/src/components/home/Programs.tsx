@@ -95,11 +95,13 @@ const Programs = () => {
         </div>
 
         <div className="mt-12 text-center">
-          <Button 
-            className="bg-[#003366] text-white px-6 py-3 rounded-md font-bold hover:bg-opacity-90 inline-flex items-center"
-          >
-            View All Programs <ChevronRight className="ml-2 h-4 w-4" />
-          </Button>
+          <Link href="/programs">
+            <Button 
+              className="bg-[#003366] text-white px-6 py-3 rounded-md font-bold hover:bg-opacity-90 inline-flex items-center"
+            >
+              View All Programs <ChevronRight className="ml-2 h-4 w-4" />
+            </Button>
+          </Link>
         </div>
       </div>
     </section>

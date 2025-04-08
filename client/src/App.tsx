@@ -8,6 +8,7 @@ import Home from "@/pages/Home";
 import ProgramDetails from "@/pages/ProgramDetails";
 import GalleryPage from "@/pages/Gallery";
 import DownloadsPage from "@/pages/Downloads";
+import AllPrograms from "@/pages/AllPrograms";
 import NotFound from "@/pages/not-found";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
@@ -33,6 +34,7 @@ function Router() {
       <main className="flex-grow">
         <Switch>
           <Route path="/" component={Home} />
+          <Route path="/programs" component={AllPrograms} />
           <Route path="/programs/:id" component={ProgramDetails} />
           <Route path="/gallery" component={GalleryPage} />
           <Route path="/downloads" component={DownloadsPage} />
