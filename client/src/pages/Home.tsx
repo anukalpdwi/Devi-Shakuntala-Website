@@ -21,11 +21,9 @@ const Home = () => {
       <Announcement />
       <Programs />
       <Campus />
-      <Gallery />
       <About />
       <Testimonials />
       <Admissions />
-      <Downloads />
       <Contact />
     </>
   );

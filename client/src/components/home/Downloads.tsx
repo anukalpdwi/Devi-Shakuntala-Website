@@ -34,7 +34,11 @@ const categoryIcons: Record<string, React.ReactNode> = {
   "Other": <FileDown className="h-5 w-5" />
 };
 
-const Downloads = () => {
+interface DownloadsProps {
+  showHeader?: boolean;
+}
+
+const Downloads: React.FC<DownloadsProps> = ({ showHeader = true }) => {
   const [documents, setDocuments] = useState<DownloadItem[]>([]);
   const [loading, setLoading] = useState(true);
   const [categories, setCategories] = useState<string[]>([]);
@@ -139,12 +143,14 @@ const Downloads = () => {
   return (
     <section id="downloads" className="py-16 bg-gray-50">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#003366] mb-4">Downloads</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Download important documents, forms, syllabi, and study materials.
-          </p>
-        </div>
+        {showHeader && (
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#003366] mb-4">Downloads</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Download important documents, forms, syllabi, and study materials.
+            </p>
+          </div>
+        )}
 
         <Tabs defaultValue="all" className="w-full">
           <div className="flex justify-center mb-8 overflow-x-auto pb-2">

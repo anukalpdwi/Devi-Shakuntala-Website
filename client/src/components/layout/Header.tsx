@@ -34,6 +34,8 @@ const Header = () => {
   }, []);
 
   const scrollToSection = (sectionId: string) => {
+    if (!sectionId) return;
+    
     closeMobileMenu();
     const section = document.getElementById(sectionId);
     if (section) {
@@ -46,14 +48,22 @@ const Header = () => {
     }
   };
 
-  const navItems = [
-    { name: "Home", sectionId: "home" },
+  type NavItem = {
+    name: string;
+    sectionId?: string;
+    path?: string;
+    hasDropdown?: boolean;
+    isPage?: boolean;
+  };
+
+  const navItems: NavItem[] = [
+    { name: "Home", sectionId: "home", path: "/" },
     { name: "Programs", sectionId: "programs", hasDropdown: true },
-    { name: "Campus", sectionId: "campus" },
-    { name: "Gallery", sectionId: "gallery" },
-    { name: "About", sectionId: "about" },
-    { name: "Downloads", sectionId: "downloads" },
-    { name: "Contact", sectionId: "contact" },
+    { name: "Campus", sectionId: "campus", path: "/#campus" },
+    { name: "Gallery", path: "/gallery", isPage: true },
+    { name: "About", sectionId: "about", path: "/#about" },
+    { name: "Downloads", path: "/downloads", isPage: true },
+    { name: "Contact", sectionId: "contact", path: "/#contact" },
   ];
 
   const programDropdownItems = [
@@ -100,7 +110,7 @@ const Header = () => {
                 <div key={item.name} className="relative group">
                   <button 
                     className="font-semibold text-[#003366] hover:text-[#800000] transition-all flex items-center"
-                    onClick={() => scrollToSection(item.sectionId)}
+                    onClick={() => item.sectionId && scrollToSection(item.sectionId)}
                   >
                     {item.name} <span className="ml-1 text-xs">▼</span>
                   </button>
@@ -120,13 +130,23 @@ const Header = () => {
                   </div>
                 </div>
               ) : (
-                <button 
-                  key={item.name}
-                  className="font-semibold text-[#003366] hover:text-[#800000] transition-all"
-                  onClick={() => scrollToSection(item.sectionId)}
-                >
-                  {item.name}
-                </button>
+                item.isPage ? (
+                  <Link 
+                    key={item.name}
+                    href={item.path || "/"}
+                    className="font-semibold text-[#003366] hover:text-[#800000] transition-all"
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <button 
+                    key={item.name}
+                    className="font-semibold text-[#003366] hover:text-[#800000] transition-all"
+                    onClick={() => item.sectionId && scrollToSection(item.sectionId)}
+                  >
+                    {item.name}
+                  </button>
+                )
               )
             ))}
             <Button 
@@ -143,20 +163,36 @@ const Header = () => {
           <div className="md:hidden mt-3 border-t pt-3">
             <nav className="flex flex-col space-y-3">
               {navItems.map((item) => (
-                <button
-                  key={item.name}
-                  className="font-semibold text-[#003366] hover:text-[#800000] transition-all text-left"
-                  onClick={() => {
-                    scrollToSection(item.sectionId);
-                    if (item.hasDropdown) {
-                      // Don't close menu if dropdown clicked
-                    } else {
-                      closeMobileMenu();
-                    }
-                  }}
-                >
-                  {item.name}
-                </button>
+                item.isPage ? (
+                  <Link
+                    key={item.name}
+                    href={item.path || "/"}
+                    className="font-semibold text-[#003366] hover:text-[#800000] transition-all block"
+                    onClick={closeMobileMenu}
+                  >
+                    {item.name}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.name}
+                    className="font-semibold text-[#003366] hover:text-[#800000] transition-all text-left"
+                    onClick={() => {
+                      if (item.sectionId) {
+                        scrollToSection(item.sectionId);
+                      } else if (item.path) {
+                        window.location.href = item.path;
+                      }
+                      
+                      if (item.hasDropdown) {
+                        // Don't close menu if dropdown clicked
+                      } else {
+                        closeMobileMenu();
+                      }
+                    }}
+                  >
+                    {item.name}
+                  </button>
+                )
               ))}
               
               {/* Mobile Programs submenu */}

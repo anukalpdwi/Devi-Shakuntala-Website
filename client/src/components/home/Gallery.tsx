@@ -134,7 +134,11 @@ const MediaViewer = ({ item }: { item: MediaItem }) => {
   }
 };
 
-const Gallery = () => {
+interface GalleryProps {
+  showHeader?: boolean;
+}
+
+const Gallery: React.FC<GalleryProps> = ({ showHeader = true }) => {
   const [selectedItem, setSelectedItem] = useState<MediaItem | null>(null);
   const [activeCategory, setActiveCategory] = useState("all");
 
@@ -149,12 +153,14 @@ const Gallery = () => {
   return (
     <section id="gallery" className="py-16 bg-white">
       <div className="container mx-auto px-6">
-        <div className="text-center mb-12">
-          <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#003366] mb-4">Gallery</h2>
-          <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-            Explore our campus, events, and student life through photos and videos.
-          </p>
-        </div>
+        {showHeader && (
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#003366] mb-4">Gallery</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              Explore our campus, events, and student life through photos and videos.
+            </p>
+          </div>
+        )}
 
         <Tabs defaultValue="all" className="w-full">
           <div className="flex justify-center mb-8 overflow-x-auto pb-2">
