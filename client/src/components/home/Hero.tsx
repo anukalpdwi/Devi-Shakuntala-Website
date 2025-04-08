@@ -1,7 +1,21 @@
 import { Button } from "@/components/ui/button";
 import { collegeInfo } from "@/lib/utils";
+import { useState, useEffect } from "react";
+import admissionFlyer from "@assets/WhatsApp Image 2025-04-08 at 12.37.55_3ee325cb_1744096799954.jpg";
+import collegeLogo from "@assets/favicon.jpg";
+
+// Define slideshow images
+const slideshowImages = [
+  "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  admissionFlyer
+];
 
 const Hero = () => {
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  // Function to scroll to a section
   const scrollToSection = (sectionId: string) => {
     const section = document.getElementById(sectionId);
     if (section) {
@@ -10,6 +24,15 @@ const Hero = () => {
       window.scrollTo({ top: y, behavior: 'smooth' });
     }
   };
+
+  // Slideshow effect
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % slideshowImages.length);
+    }, 5000);
+    
+    return () => clearInterval(interval);
+  }, []);
 
   return (
     <section id="home" className="relative bg-gradient-to-r from-[#003366] to-blue-900 text-white">
@@ -39,12 +62,37 @@ const Hero = () => {
               </Button>
             </div>
           </div>
-          <div className="md:w-1/2">
-            <img 
-              src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" 
-              alt="College Campus Main Building" 
-              className="rounded-lg shadow-xl w-full h-auto"
-            />
+          <div className="md:w-1/2 relative">
+            {/* Slideshow */}
+            <div className="overflow-hidden rounded-lg shadow-xl">
+              <div 
+                className="flex transition-transform duration-1000 ease-in-out"
+                style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
+              >
+                {slideshowImages.map((image, index) => (
+                  <img 
+                    key={index}
+                    src={image} 
+                    alt={`College Campus Slideshow ${index + 1}`} 
+                    className="min-w-full h-auto object-cover"
+                  />
+                ))}
+              </div>
+            </div>
+            
+            {/* Slideshow Navigation Dots */}
+            <div className="flex justify-center mt-4">
+              {slideshowImages.map((_, index) => (
+                <button
+                  key={index}
+                  onClick={() => setCurrentImageIndex(index)}
+                  className={`w-3 h-3 mx-1 rounded-full ${
+                    currentImageIndex === index ? 'bg-[#FFD700]' : 'bg-white bg-opacity-50'
+                  }`}
+                  aria-label={`Go to slide ${index + 1}`}
+                />
+              ))}
+            </div>
           </div>
         </div>
 
