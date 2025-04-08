@@ -2,6 +2,7 @@ import Hero from "@/components/home/Hero";
 import Announcement from "@/components/home/Announcement";
 import Programs from "@/components/home/Programs";
 import Campus from "@/components/home/Campus";
+import Gallery from "@/components/home/Gallery";
 import About from "@/components/home/About";
 import Testimonials from "@/components/home/Testimonials";
 import Admissions from "@/components/home/Admissions";
@@ -20,6 +21,7 @@ const Home = () => {
       <Announcement />
       <Programs />
       <Campus />
+      <Gallery />
       <About />
       <Testimonials />
       <Admissions />

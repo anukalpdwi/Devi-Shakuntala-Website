@@ -19,7 +19,9 @@ const Footer = () => {
     { name: "About Us", sectionId: "about" },
     { name: "Academic Programs", sectionId: "programs" },
     { name: "Campus Facilities", sectionId: "campus" },
+    { name: "Gallery", sectionId: "gallery" },
     { name: "Admissions", sectionId: "admissions" },
+    { name: "Downloads", sectionId: "downloads" },
     { name: "Contact Us", sectionId: "contact" },
   ];
 
@@ -116,8 +118,11 @@ const Footer = () => {
         </div>
 
         <div className="border-t border-gray-700 mt-12 pt-8 text-center">
-          <p className="text-gray-400">
+          <p className="text-gray-400 mb-2">
             © {new Date().getFullYear()} {collegeInfo.name}. All Rights Reserved.
+          </p>
+          <p className="text-gray-400 text-sm">
+            Built by - <a href="https://www.linkedin.com/in/anukalp-dwivedi" target="_blank" rel="noopener noreferrer" className="text-[#FFD700] hover:underline">Anukalp Dwivedi</a>
           </p>
         </div>
       </div>

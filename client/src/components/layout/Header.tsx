@@ -50,6 +50,7 @@ const Header = () => {
     { name: "Home", sectionId: "home" },
     { name: "Programs", sectionId: "programs", hasDropdown: true },
     { name: "Campus", sectionId: "campus" },
+    { name: "Gallery", sectionId: "gallery" },
     { name: "About", sectionId: "about" },
     { name: "Downloads", sectionId: "downloads" },
     { name: "Contact", sectionId: "contact" },
@@ -73,8 +74,8 @@ const Header = () => {
             <img src={logoPath} alt={`${collegeInfo.name} Logo`} className="h-16 w-16 mr-3" />
             <div>
               <h1 className="text-xl font-heading font-bold text-[#003366] md:block">
-                <span className="md:inline block">{collegeInfo.shortName || "DSSS"}</span>
-                <span className="hidden md:inline"> - {collegeInfo.name}</span>
+                <span className="hidden md:inline">{collegeInfo.name}</span>
+                <span className="md:hidden block text-sm">{collegeInfo.name}</span>
               </h1>
               <p className="text-sm text-gray-600 hidden md:block">{collegeInfo.tagline}</p>
             </div>
