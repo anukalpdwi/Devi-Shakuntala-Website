@@ -2,14 +2,16 @@ import { Button } from "@/components/ui/button";
 import { collegeInfo } from "@/lib/utils";
 import { useState, useEffect } from "react";
 import admissionFlyer from "@assets/WhatsApp Image 2025-04-08 at 12.37.55_3ee325cb_1744096799954.jpg";
+import admissionbg from "@assets/Campus.jpg";
 import collegeLogo from "@assets/favicon.jpg";
 
 // Define slideshow images
 const slideshowImages = [
-  admissionFlyer, // Prioritize the admissions flyer
-  "https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1562774053-701939374585?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
-  "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80"
+ // Prioritize the admissions flyer
+  admissionbg,
+  "https://scontent.fjlr3-1.fna.fbcdn.net/v/t39.30808-6/462705946_2491128501083992_6027346152656418060_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=833d8c&_nc_ohc=QrnfOicjwxMQ7kNvwEEcUFh&_nc_oc=AdnCDNIrHRetSsBZRnjBFIa0Mpxy3HIvysh83JGsQkT57L-omum1rx3cpjK_AW8P5iDPnlU8Pw7cMdYW_sXL2EZX&_nc_zt=23&_nc_ht=scontent.fjlr3-1.fna&_nc_gid=usT_g6GzDGn9qhZkh6GQzA&oh=00_AfGsiW-qDzOMLXEi4QLQmTuu77i8tr1UUkb5ZPkfAJMzLQ&oe=67FB16C8",
+  "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80",
+  "https://scontent.fjlr3-1.fna.fbcdn.net/v/t39.30808-6/462620936_2491128491083993_5777042192120360201_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=833d8c&_nc_ohc=N59WdGPhNAwQ7kNvwF3YP-K&_nc_oc=AdlqZGm7gHLEx-5JORBy_wbMm06lyFi_s-gFYTZ9OLZ5jhRCwmCy1tayGZ8s09ZJr_wtrHRT8SOA--7q--nf5ih9&_nc_zt=23&_nc_ht=scontent.fjlr3-1.fna&_nc_gid=1-fsRge4ExA6P1oj44dDCQ&oh=00_AfGaiSZ-fU13bQx6HRPGrfIPFtkcBov4loemUqFapJoBzg&oe=67FB1B4E"
 ];
 
 const Hero = () => {
@@ -66,7 +68,7 @@ const Hero = () => {
             {/* Slideshow */}
             <div className="overflow-hidden rounded-lg shadow-xl" style={{ aspectRatio: "16/9" }}>
               <div 
-                className="flex transition-transform duration-1000 ease-in-out h-full"
+                className="flex transition-transform duration-1000 ease-in-out "
                 style={{ transform: `translateX(-${currentImageIndex * 100}%)` }}
               >
                 {slideshowImages.map((image, index) => (

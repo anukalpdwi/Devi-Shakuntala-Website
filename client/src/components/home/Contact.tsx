@@ -216,14 +216,16 @@ const Contact = () => {
         {/* Map Section */}
         <div className="mt-12">
           <div className="bg-gray-300 rounded-lg h-96 overflow-hidden">
-            {/* This would be replaced with an actual Google Maps embed */}
-            <div className="w-full h-full flex items-center justify-center bg-gray-200">
-              <div className="text-center text-gray-600">
-                <MapPin className="h-8 w-8 mx-auto mb-3" />
-                <p className="font-bold">Google Maps Location</p>
-                <p className="text-sm">{collegeInfo.address}</p>
-              </div>
-            </div>
+            {/* Embed Google Maps iframe */}
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3653.7502564416895!2d81.4005933!3d23.6848876!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x39868f140127c7ab%3A0x17b26cde78fae8bb!2sDevi%20shakuntala%20college%20Jaisinghnagar!5e0!3m2!1sen!2sin!4v1744123924064!5m2!1sen!2sin"
+              width="100%"
+              height="100%"
+              style={{ border: 0 }}
+              allowFullScreen={true}
+              loading="lazy"
+              referrerPolicy="no-referrer-when-downgrade"
+            ></iframe>
           </div>
         </div>
       </div>

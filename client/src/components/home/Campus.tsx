@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { Button } from "@/components/ui/button";
-import { Eye, Headset } from "lucide-react";
+import { Eye, ImageIcon } from "lucide-react";
 import { facilities } from "@/data/facilities";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { useLocation } from "wouter";
@@ -73,7 +73,7 @@ const Campus = () => {
               window.scrollTo(0, 0);
             }}
           >
-            Take a Virtual Tour <Headset className="ml-2 h-4 w-4" />
+            View Gallery <ImageIcon className="ml-2 h-4 w-4" />
           </Button>
         </div>
       </div>

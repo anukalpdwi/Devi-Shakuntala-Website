@@ -8,14 +8,14 @@ export function cn(...inputs: ClassValue[]) {
 // College contact information
 export const collegeInfo = {
   name: "Devi Shakuntala Shikshan Sansthan",
-  shortName: "DSSS",
-  tagline: "Excellence in Education",
+  longName: "Devi Shakuntala Shikshan Sansthan, Jaisinghnagar",
+  tagline: "Jaisinghnagar, Shahdol, MP - 484771",
   address: "Jaisinghnagar, Shahdol, Madhya Pradesh 484771",
   phone1: "+91 9893767392",
   phone2: "+91 9893575723",
   email: {
-    admissions: "admissions@devishakuntala.edu.in",
-    info: "info@devishakuntala.edu.in"
+    admissions: "dserdjaisinghnagar@gmail.com",
+    info: "info@dseducation.in"
   },
   officeHours: "Monday - Saturday: 9:00 AM - 5:00 PM",
   officeHoursSunday: "Sunday: Closed",
@@ -23,7 +23,7 @@ export const collegeInfo = {
   affiliations: [
     {
       name: "Makhanlal Chaturvedi University",
-      fullName: "Rashtreeya Patrkarita Evan Sanchar Vishwavidhlay, Bhopal"
+      fullName: "Rashtreeya Patrkarita Evan Sanchar Vishwavidyalaya, Bhopal"
     },
     {
       name: "Chitrkoot Gramoday Vishwavidyalaya",

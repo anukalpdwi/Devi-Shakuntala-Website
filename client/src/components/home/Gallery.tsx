@@ -12,6 +12,9 @@ import {
 } from "@/components/ui/dialog";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import { Image, PlayCircle, X } from "lucide-react";
+import campusbg from "@assets/Campus.jpg";
+import sportsbg from "@assets/Sports.jpg";
+import fest from "@assets/fest.jpg";
 
 // Media items interface
 interface MediaItem {
@@ -31,8 +34,8 @@ const galleryItems: MediaItem[] = [
     type: "image",
     title: "Campus Main Building",
     description: "The administrative block of our college",
-    thumbnail: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b",
-    source: "https://images.unsplash.com/photo-1607237138185-eedd9c632b0b",
+    thumbnail: campusbg,
+    source: campusbg,
     category: "Campus"
   },
   {
@@ -67,8 +70,8 @@ const galleryItems: MediaItem[] = [
     type: "image",
     title: "Computer Lab",
     description: "Modern computer lab with latest technology",
-    thumbnail: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789",
-    source: "https://images.unsplash.com/photo-1581092918056-0c4c3acd3789",
+    thumbnail: "https://www.hillshigh.com/wp-content/uploads/2021/02/lab21-1.jpg",
+    source: "https://www.hillshigh.com/wp-content/uploads/2021/02/lab21-1.jpg",
     category: "Facilities"
   },
   {
@@ -76,8 +79,8 @@ const galleryItems: MediaItem[] = [
     type: "image",
     title: "Cultural Event",
     description: "Annual cultural celebration at the college",
-    thumbnail: "https://images.unsplash.com/photo-1504680177321-2e6a879aac86",
-    source: "https://images.unsplash.com/photo-1504680177321-2e6a879aac86",
+    thumbnail: "https://rp-school.vercel.app/Images/annual-day/1.jpg",
+    source: "https://rp-school.vercel.app/Images/annual-day/1.jpg",
     category: "Events"
   },
   {
@@ -94,18 +97,18 @@ const galleryItems: MediaItem[] = [
     type: "image",
     title: "Sports Ground",
     description: "Well-maintained sports facilities",
-    thumbnail: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4",
-    source: "https://images.unsplash.com/photo-1533107862482-0e6974b06ec4",
+    thumbnail: sportsbg,
+    source: sportsbg,
     category: "Facilities"
   },
   {
     id: "9",
     type: "image",
-    title: "Science Lab",
-    description: "Advanced science lab for practical learning",
-    thumbnail: "https://images.unsplash.com/photo-1582719471137-c3967ffb1c42",
-    source: "https://images.unsplash.com/photo-1582719471137-c3967ffb1c42",
-    category: "Facilities"
+    title: "Fest and Events",
+    description: "Annual Fest and Events Celebration",
+    thumbnail: fest,
+    source: fest,
+    category: "Events"
   }
 ];
 

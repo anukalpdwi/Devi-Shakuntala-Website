@@ -1,3 +1,5 @@
+import SportsImage from '@assets/Sports.jpg'; // Import the local image
+
 export interface Facility {
   id: string;
   name: string;
@@ -16,19 +18,19 @@ export const facilities: Facility[] = [
     id: "computer-labs",
     name: "Computer Laboratories",
     description: "High-performance computers with specialized software for technical programs.",
-    image: "https://images.unsplash.com/photo-1581092921461-fd0e5234664b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: "https://www.hillshigh.com/wp-content/uploads/2021/02/lab21-1.jpg"
   },
   {
     id: "classrooms",
     name: "Smart Classrooms",
     description: "Technology-enhanced learning spaces with modern teaching equipment.",
-    image: "https://images.unsplash.com/photo-1509062522246-3755977927d7?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: "https://www.tribuneindia.com/sortd-service/imaginary/v22-01/jpg/large/high?url=dGhldHJpYnVuZS1zb3J0ZC1wcm8tcHJvZC1zb3J0ZC9tZWRpYWM2ZmM2NTEwLTRlNzMtMTFlZi1hOWM2LTU3MzgwY2VmMTg5Yy5qcGc="
   },
   {
     id: "student-center",
     name: "Student Center",
     description: "Recreational and collaborative spaces for student activities and events.",
-    image: "https://images.unsplash.com/photo-1517486808906-6ca8b3f8e1c0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: "https://bsmedia.business-standard.com/_media/bs/img/article/2021-12/03/full/1638506038-4213.jpg?im=FeatureCrop,size=(826,465)"
   },
   {
     id: "seminar-hall",
@@ -40,6 +42,6 @@ export const facilities: Facility[] = [
     id: "sports",
     name: "Sports Facilities",
     description: "Indoor and outdoor sports facilities for physical activities and competitions.",
-    image: "https://images.unsplash.com/photo-1517649763962-0c623066013b?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80"
+    image: SportsImage // Use the imported local image
   }
 ];

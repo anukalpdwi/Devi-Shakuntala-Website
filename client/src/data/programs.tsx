@@ -12,6 +12,26 @@ export interface Program {
 export const programs: Program[] = [
   // Undergraduate Programs
   {
+    id: "dca",
+    name: "DCA",
+    fullName: "Diploma in Computer Applications",
+    description: "Foundation course in computer applications for entry-level IT positions.",
+    category: "diploma",
+    duration: "1 Year",
+    type: "Full-time",
+    details: "The Diploma in Computer Applications (DCA) program provides a foundation in computer applications for entry-level IT positions. The curriculum covers basic programming, office applications, web design, computer fundamentals, and basic database management. Students gain practical skills through lab sessions and projects. This program is ideal for those looking to quickly enter the IT workforce or gain basic computer skills for other professional roles."
+  },
+  {
+    id: "pgdca",
+    name: "PGDCA",
+    fullName: "Post Graduate Diploma in Computer Applications",
+    description: "Advanced diploma course focused on computer applications for graduates.",
+    category: "diploma",
+    duration: "1 Year",
+    type: "Full-time",
+    details: "The Post Graduate Diploma in Computer Applications (PGDCA) is an advanced diploma course focused on computer applications for graduates. The curriculum includes advanced programming, database management, web development, software engineering, and computer networks. Students undertake projects to apply their knowledge and develop practical skills. This program is designed for graduates from non-computer backgrounds who want to gain advanced computer skills for career advancement or transition to the IT sector."
+  },
+  {
     id: "bba",
     name: "BBA",
     fullName: "Bachelor of Business Administration",
@@ -145,26 +165,7 @@ export const programs: Program[] = [
   },
   
   // Diploma Programs
-  {
-    id: "dca",
-    name: "DCA",
-    fullName: "Diploma in Computer Applications",
-    description: "Foundation course in computer applications for entry-level IT positions.",
-    category: "diploma",
-    duration: "1 Year",
-    type: "Full-time",
-    details: "The Diploma in Computer Applications (DCA) program provides a foundation in computer applications for entry-level IT positions. The curriculum covers basic programming, office applications, web design, computer fundamentals, and basic database management. Students gain practical skills through lab sessions and projects. This program is ideal for those looking to quickly enter the IT workforce or gain basic computer skills for other professional roles."
-  },
-  {
-    id: "pgdca",
-    name: "PGDCA",
-    fullName: "Post Graduate Diploma in Computer Applications",
-    description: "Advanced diploma course focused on computer applications for graduates.",
-    category: "diploma",
-    duration: "1 Year",
-    type: "Full-time",
-    details: "The Post Graduate Diploma in Computer Applications (PGDCA) is an advanced diploma course focused on computer applications for graduates. The curriculum includes advanced programming, database management, web development, software engineering, and computer networks. Students undertake projects to apply their knowledge and develop practical skills. This program is designed for graduates from non-computer backgrounds who want to gain advanced computer skills for career advancement or transition to the IT sector."
-  },
+  
   {
     id: "djmc",
     name: "DJMC",

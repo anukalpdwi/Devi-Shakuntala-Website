@@ -14,7 +14,7 @@ const DownloadsPage = () => {
             Downloads
           </h1>
           <p className="text-lg text-gray-600 text-center max-w-3xl mx-auto mb-12">
-            Access important documents, forms, syllabi, and study materials.
+            Access important documents, forms, syllabus, and study materials.
           </p>
         </div>
       </div>

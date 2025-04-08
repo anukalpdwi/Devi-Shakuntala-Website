@@ -12,9 +12,9 @@ const Programs = () => {
     setActiveCategory(category);
   };
 
-  const filteredPrograms = activeCategory === "all" 
-    ? programs 
-    : programs.filter(program => program.category === activeCategory);
+  const filteredPrograms: typeof programs = activeCategory === "all" 
+    ? programs.slice(0, 6)
+    : programs.filter(program => program.category === activeCategory).slice(0, 6);
 
   return (
     <section id="programs" className="py-16 bg-gray-50">

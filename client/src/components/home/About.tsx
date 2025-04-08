@@ -6,6 +6,7 @@ import {
   Award 
 } from "lucide-react";
 import { useLocation } from "wouter";
+import campus from '@assets/Campus.jpg';
 
 const About = () => {
   const [_, setLocation] = useLocation();
@@ -22,7 +23,7 @@ const About = () => {
         <div className="flex flex-col md:flex-row items-center gap-12">
           <div className="md:w-1/2">
             <img 
-              src="https://images.unsplash.com/photo-1607237138185-eedd9c632b0b?ixlib=rb-1.2.1&auto=format&fit=crop&w=600&q=80" 
+              src={campus} 
               alt="Campus Building" 
               className="rounded-lg shadow-lg w-full h-auto" 
             />

@@ -87,7 +87,7 @@ const Header = () => {
                 <span className="hidden md:inline">{collegeInfo.name}</span>
                 <span className="md:hidden block text-sm">{collegeInfo.name}</span>
               </h1>
-              <p className="text-sm text-gray-600 hidden md:block">{collegeInfo.tagline}</p>
+              <p className="text-sm text-gray-600 md:block">{collegeInfo.tagline}</p>
             </div>
           </Link>
 

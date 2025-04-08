@@ -89,19 +89,19 @@ const Downloads: React.FC<DownloadsProps> = ({ showHeader = true }) => {
   const sampleDocuments: DownloadItem[] = [
     {
       id: "1",
-      title: "BA 1st Year - Syllabus 2025",
+      title: "PGDCA - Syllabus 2025",
       category: "Syllabus",
-      fileName: "BA_Syllabus_2025.pdf",
+      fileName: "PGDCA_Syllabus_2025.pdf",
       uploadDate: new Date().toISOString(),
-      downloadUrl: "#"
+      downloadUrl: "https://www.mcu.ac.in/download/DCA_PGDCA_SYLLABUS_FROM_JULY_2018/PGDCA_Syllabus_july_2018.pdf"
     },
     {
       id: "2",
-      title: "BCom 2nd Year - Timetable",
-      category: "Timetable",
-      fileName: "BCom_Timetable_2025.pdf",
+      title: "DCA - Syllabus 2025",
+      category: "Syllabus",
+      fileName: "DCA_Syllabus_2025.pdf",
       uploadDate: new Date().toISOString(),
-      downloadUrl: "#"
+      downloadUrl: "https://www.mcu.ac.in/download/DCA_PGDCA_SYLLABUS_FROM_JULY_2018/DCA_Syllabus_july_2018.pdf"
     },
     {
       id: "3",
@@ -147,7 +147,7 @@ const Downloads: React.FC<DownloadsProps> = ({ showHeader = true }) => {
           <div className="text-center mb-12">
             <h2 className="text-3xl md:text-4xl font-heading font-bold text-[#003366] mb-4">Downloads</h2>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Download important documents, forms, syllabi, and study materials.
+              Download important documents, forms, syllabus, and study materials.
             </p>
           </div>
         )}

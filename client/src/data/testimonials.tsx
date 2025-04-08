@@ -12,7 +12,7 @@ export const testimonials: Testimonial[] = [
   {
     id: "1",
     name: "Rahul Kumar",
-    title: "MCA Graduate, 2024",
+    title: "DCA Graduate, 2024",
     content: "The MCA program at DSSS has been transformative for my career. The faculty's industry experience and the hands-on learning approach helped me secure a great job even before graduation.",
     rating: 5,
     initials: "RK",
