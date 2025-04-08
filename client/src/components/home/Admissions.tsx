@@ -53,10 +53,9 @@ const Admissions = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      // In a real implementation, this would send data to the backend
-      // await apiRequest("POST", "/api/admission-request", data);
+      // Send data to the backend
+      await apiRequest("POST", "/api/admission-request", data);
       
-      // For demo purposes, just show success toast
       toast({
         title: "Information Request Submitted",
         description: "We'll contact you shortly with more details.",

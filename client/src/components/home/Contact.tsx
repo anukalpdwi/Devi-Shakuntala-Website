@@ -16,6 +16,7 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useToast } from "@/hooks/use-toast";
 import { MapPin, Phone, Mail, Clock } from "lucide-react";
 import { collegeInfo } from "@/lib/utils";
+import { apiRequest } from "@/lib/queryClient";
 
 const formSchema = z.object({
   name: z.string().min(2, "Name is required"),
@@ -45,10 +46,9 @@ const Contact = () => {
   const onSubmit = async (data: FormValues) => {
     setIsSubmitting(true);
     try {
-      // In a real implementation, this would send data to the backend
-      // await apiRequest("POST", "/api/contact", data);
+      // Send data to the backend
+      await apiRequest("POST", "/api/contact", data);
       
-      // For demo purposes, just show success toast
       toast({
         title: "Message Sent Successfully",
         description: "We'll get back to you soon.",

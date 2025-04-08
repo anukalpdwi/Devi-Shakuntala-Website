@@ -8,6 +8,7 @@ export function cn(...inputs: ClassValue[]) {
 // College contact information
 export const collegeInfo = {
   name: "Devi Shakuntala Shikshan Sansthan",
+  shortName: "DSSS",
   tagline: "Excellence in Education",
   address: "Jaisinghnagar, Shahdol, Madhya Pradesh 484771",
   phone1: "+91 9893767392",

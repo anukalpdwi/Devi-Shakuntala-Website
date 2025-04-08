@@ -9,6 +9,7 @@ import NotFound from "@/pages/not-found";
 import Header from "@/components/layout/Header";
 import Footer from "@/components/layout/Footer";
 import WhatsApp from "@/components/home/WhatsApp";
+import BackToTop from "@/components/layout/BackToTop";
 
 function Router() {
   return (
@@ -22,6 +23,7 @@ function Router() {
         </Switch>
       </main>
       <WhatsApp />
+      <BackToTop />
       <Footer />
     </div>
   );

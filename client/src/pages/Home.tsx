@@ -5,7 +5,7 @@ import Campus from "@/components/home/Campus";
 import About from "@/components/home/About";
 import Testimonials from "@/components/home/Testimonials";
 import Admissions from "@/components/home/Admissions";
-import News from "@/components/home/News";
+import Downloads from "@/components/home/Downloads";
 import Contact from "@/components/home/Contact";
 import { Helmet } from "react-helmet";
 
@@ -23,7 +23,7 @@ const Home = () => {
       <About />
       <Testimonials />
       <Admissions />
-      <News />
+      <Downloads />
       <Contact />
     </>
   );
