@@ -47,7 +47,10 @@ const About = () => {
             
             <Button 
               className="bg-[#800000] text-white px-6 py-3 rounded-md font-bold hover:bg-opacity-90"
-              onClick={() => setLocation("/gallery")}
+              onClick={() => {
+                setLocation("/gallery");
+                window.scrollTo(0, 0);
+              }}
             >
               Learn More About Us
             </Button>
