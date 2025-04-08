@@ -1,4 +1,4 @@
-import { PhoneCall } from 'lucide-react';
+import { MessageCircle } from 'lucide-react';
 import { collegeInfo } from '@/lib/utils';
 
 const WhatsApp = () => {
@@ -13,7 +13,7 @@ const WhatsApp = () => {
         className="flex items-center justify-center bg-green-500 hover:bg-green-600 text-white rounded-full w-14 h-14 shadow-lg transition-all hover:scale-110"
         aria-label="Contact on WhatsApp"
       >
-        <PhoneCall className="h-6 w-6" />
+        <MessageCircle className="h-6 w-6" />
       </a>
     </div>
   );

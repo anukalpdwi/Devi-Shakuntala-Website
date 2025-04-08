@@ -27,7 +27,7 @@ const Programs = () => {
         </div>
 
         {/* Program Categories */}
-        <div className="flex flex-wrap justify-center mb-12 space-x-2 space-y-2 md:space-y-0">
+        <div className="flex flex-wrap justify-center gap-2 mb-12">
           <Button 
             variant={activeCategory === "all" ? "default" : "outline"}
             className={`rounded-full ${activeCategory === "all" ? "bg-[#003366] text-white" : "bg-gray-200 text-gray-700 hover:bg-gray-300"}`}

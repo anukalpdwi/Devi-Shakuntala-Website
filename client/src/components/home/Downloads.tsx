@@ -147,12 +147,12 @@ const Downloads = () => {
         </div>
 
         <Tabs defaultValue="all" className="w-full">
-          <div className="flex justify-center mb-8">
-            <TabsList className="bg-gray-200">
+          <div className="flex justify-center mb-8 overflow-x-auto pb-2">
+            <TabsList className="bg-gray-200 flex-nowrap">
               <TabsTrigger 
                 value="all"
                 onClick={() => setActiveCategory('all')}
-                className="data-[state=active]:bg-[#003366] data-[state=active]:text-white"
+                className="data-[state=active]:bg-[#003366] data-[state=active]:text-white whitespace-nowrap"
               >
                 All Documents
               </TabsTrigger>
@@ -161,7 +161,7 @@ const Downloads = () => {
                   key={category}
                   value={category}
                   onClick={() => setActiveCategory(category)}
-                  className="data-[state=active]:bg-[#003366] data-[state=active]:text-white"
+                  className="data-[state=active]:bg-[#003366] data-[state=active]:text-white whitespace-nowrap"
                 >
                   {category}
                 </TabsTrigger>
@@ -188,13 +188,13 @@ const Downloads = () => {
                 displayDocuments.map((doc) => (
                   <Card key={doc.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
                     <CardContent className="p-6">
-                      <div className="flex items-start mb-4">
-                        <div className="bg-[#003366]/10 p-3 rounded-full mr-4">
+                      <div className="flex flex-col sm:flex-row items-start mb-4">
+                        <div className="bg-[#003366]/10 p-3 rounded-full mr-4 mb-3 sm:mb-0">
                           {categoryIcons[doc.category] || <FileDown className="h-5 w-5 text-[#003366]" />}
                         </div>
-                        <div>
+                        <div className="flex-1">
                           <Badge className="bg-[#800000] text-white mb-2">{doc.category}</Badge>
-                          <h3 className="font-heading font-bold text-lg text-[#003366] mb-1">{doc.title}</h3>
+                          <h3 className="font-heading font-bold text-lg text-[#003366] mb-1 break-words">{doc.title}</h3>
                           <p className="text-sm text-gray-500 mb-2">
                             Uploaded: {formatDate(doc.uploadDate)}
                           </p>
@@ -238,13 +238,13 @@ const Downloads = () => {
                   displayDocuments.map((doc) => (
                     <Card key={doc.id} className="bg-white rounded-lg shadow-md hover:shadow-lg transition-shadow">
                       <CardContent className="p-6">
-                        <div className="flex items-start mb-4">
-                          <div className="bg-[#003366]/10 p-3 rounded-full mr-4">
+                        <div className="flex flex-col sm:flex-row items-start mb-4">
+                          <div className="bg-[#003366]/10 p-3 rounded-full mr-4 mb-3 sm:mb-0">
                             {categoryIcons[doc.category] || <FileDown className="h-5 w-5 text-[#003366]" />}
                           </div>
-                          <div>
+                          <div className="flex-1">
                             <Badge className="bg-[#800000] text-white mb-2">{doc.category}</Badge>
-                            <h3 className="font-heading font-bold text-lg text-[#003366] mb-1">{doc.title}</h3>
+                            <h3 className="font-heading font-bold text-lg text-[#003366] mb-1 break-words">{doc.title}</h3>
                             <p className="text-sm text-gray-500 mb-2">
                               Uploaded: {formatDate(doc.uploadDate)}
                             </p>
