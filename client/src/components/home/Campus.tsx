@@ -3,9 +3,11 @@ import { Button } from "@/components/ui/button";
 import { Eye, Headset } from "lucide-react";
 import { facilities } from "@/data/facilities";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
+import { useLocation } from "wouter";
 
 const Campus = () => {
   const [selectedFacility, setSelectedFacility] = useState<string | null>(null);
+  const [_, setLocation] = useLocation();
 
   return (
     <section id="campus" className="py-16">
@@ -66,6 +68,7 @@ const Campus = () => {
         <div className="mt-12 text-center">
           <Button 
             className="bg-[#003366] text-white px-6 py-3 rounded-md font-bold hover:bg-opacity-90 inline-flex items-center"
+            onClick={() => setLocation("/gallery")}
           >
             Take a Virtual Tour <Headset className="ml-2 h-4 w-4" />
           </Button>

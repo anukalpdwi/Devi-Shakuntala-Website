@@ -5,8 +5,10 @@ import {
   Handshake, 
   Award 
 } from "lucide-react";
+import { useLocation } from "wouter";
 
 const About = () => {
+  const [_, setLocation] = useLocation();
   const features = [
     { icon: <GraduationCap className="text-[#800000] text-xl mr-3" />, text: "Qualified Faculty" },
     { icon: <Laptop className="text-[#800000] text-xl mr-3" />, text: "Modern Facilities" },
@@ -45,6 +47,7 @@ const About = () => {
             
             <Button 
               className="bg-[#800000] text-white px-6 py-3 rounded-md font-bold hover:bg-opacity-90"
+              onClick={() => setLocation("/gallery")}
             >
               Learn More About Us
             </Button>
