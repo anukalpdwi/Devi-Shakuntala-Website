@@ -100,8 +100,18 @@ const Hero = () => {
 
         {/* Affiliations */}
         <div className="mt-16 bg-white bg-opacity-10 p-6 rounded-lg">
-          <h3 className="text-xl font-heading font-semibold mb-4 text-center">Our Affiliations</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-center">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 items-center">
+            <div className="flex items-center justify-center bg-white bg-opacity-20 p-4 rounded-lg">
+              <img 
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ae/Emblem_of_Madhya_Pradesh.svg/1200px-Emblem_of_Madhya_Pradesh.svg.png"
+                alt="MP Government Logo"
+                className="h-12 w-12 mr-3"
+              />
+              <div className="text-center">
+                <h4 className="font-heading font-bold">MP State Government</h4>
+                <p className="text-sm text-gray-200">Recognized Institution</p>
+              </div>
+            </div>
             {collegeInfo.affiliations.map((affiliation, index) => (
               <div key={index} className="flex items-center justify-center bg-white bg-opacity-20 p-4 rounded-lg">
                 <div className="text-center">
