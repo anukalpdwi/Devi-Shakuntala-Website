@@ -23,7 +23,7 @@ export const collegeInfo = {
   affiliations: [
     {
       name: "Makhanlal Chaturvedi University",
-      fullName: "Rashtreeya Patrkarita Evan Sanchar Vishwavidyalaya, Bhopal"
+      fullName: "Rashtreeya Patrkarita Evam Sanchar Vishwavidyalaya, Bhopal"
     },
     {
       name: "Chitrkoot Gramoday Vishwavidyalaya",
